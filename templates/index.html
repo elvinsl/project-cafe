@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Project Pive
+{% endblock %}
+
+{% block body %}
+    <form action="" method="post">
+        <label for="pive">Pive</label>
+        <input type="number" name="pive" id="pive" value="0"><br>
+        <label for="pive">Pendir</label>
+        <input type="number" name="pendir" id="pendir" value="0"><br>
+        <label for="pive">Cay</label>
+        <input type="number" name="cay" id="cay" value="0"><br>
+        <input type="submit" value="OK">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+    </form>
+{% endblock %}

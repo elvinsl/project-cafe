@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Project Pive - Database
+{% endblock %}
+
+{% block body %}
+    {% for key in data.keys() %}
+        <p>{{ key }}</p>
+        {% for item in data[key] %}
+            <p>{{ item }}</p>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
