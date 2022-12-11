@@ -19,9 +19,12 @@ def add_db(data):
         except:
             json_data = dict()
     try:
-        json_data[time_date].append(new_data)
+        json_data[time_date].insert(0, new_data)
     except:
-        json_data.update({time_date: [new_data]})
+        new_json_data = {time_date: [new_data]}
+        new_json_data.update(json_data)
+        json_data = new_json_data
+        # json_data.update({time_date: [new_data]})
     finally:
         with open('db.json', 'w') as f:
             json.dump(json_data, f)
@@ -32,8 +35,11 @@ def index():
     if request.method == 'POST':
         # checks if data has 0 value then don't append to database
         data = {key: value for key, value in request.form.to_dict().items() if value != '0'}
-        time_date, check_name = add_db(data)
-        flash(f'Tarix : {time_date}, Cek Nomresi : {check_name}, Sifarisler : {data}', category='success')
+        if data:
+            time_date, check_name = add_db(data)
+            flash(f'Tarix : {time_date}, Cek Nomresi : {check_name}, Sifarisler : {data}', category='success')
+        else:
+            flash(f'Zəhmət olmasa sifariş daxil edin!', category='danger')
         return render_template('index.html', data=data)
     return render_template('index.html')
 
