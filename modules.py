@@ -2,6 +2,7 @@ from datetime import date
 from time import time
 from hashlib import md5
 import json
+import pandas as pd
 
 
 prices = {
@@ -16,7 +17,7 @@ def calc_price(data):
     for k, v in data.items():
         total += prices[k] * v
     
-    return f'{str(total)} ₼'
+    return str(total)
 
 
 def add_db(data):
@@ -59,3 +60,21 @@ def get_monthly_price(date):
 
 
     return total
+
+
+def get_check(check_name):
+    with open('db.json', 'r') as f:
+        data = json.load(f)
+
+    for date in data.keys():
+        for item in data[date]:
+            try:
+                check = item[check_name]
+            except KeyError:
+                continue
+
+    df = pd.DataFrame({'Ad': check.keys(), 'Miqdar': check.values()})
+    print(df)
+
+
+get_check('2B2FA40')
