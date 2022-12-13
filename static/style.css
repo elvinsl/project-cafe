@@ -1,0 +1,186 @@
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.codedatabase {
+  border: 2px solid #2D727D;
+  text-align: center;
+  width: 50%;
+  margin: 20px auto 0 auto;
+  box-shadow: 0px 0px 10px 5px #2D727D;
+  overflow: hidden;
+}
+.codedatabase .scroll {
+  margin: 4px, 4px;
+  padding: 4px;
+  background-color: #fff;
+  width: 100%;
+  height: 620px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+  justify-content: space-around;
+  text-align: center;
+}
+.codedatabase ul {
+  background-color: #2D727D;
+}
+.codedatabase ul li {
+  color: #fff;
+  background-color: #3C98A7;
+  font-weight: bold;
+  font-size: 18px;
+}
+.codedatabase ul li span {
+  color: #2D727D;
+  background-color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+.codedatabase ul .total {
+  color: #2D727D;
+  background-color: #fff;
+}
+.codedatabase h4 {
+  text-decoration: underline;
+  margin-bottom: 10px;
+  color: #2D727D;
+  font-weight: bold;
+}
+.codedatabase .sp1 {
+  border: 1px solid #2D727D;
+  padding: 10px 20px;
+  margin: 10px auto 10px auto;
+  border-radius: 10px;
+  background-color: white;
+  color: #2D727D;
+  display: flex;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.header {
+  background-color: #3C98A7;
+  padding: 10px;
+}
+.header a {
+  background-color: #3C98A7;
+  color: #fff;
+  font-size: 18px;
+  margin-right: 10px;
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.header a:hover {
+  background-color: #fff;
+  color: #3C98A7;
+  border: 1px solid #3C98A7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.wrapper .tabs {
+  position: relative;
+  margin: 3rem 0;
+  background: #2D727D;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  margin: auto;
+}
+.wrapper .tabs .tab {
+  width: 3%;
+}
+.wrapper .tabs .tab label {
+  font-size: 10px;
+}
+.wrapper .tabs .tab .tab-switch {
+  display: none;
+}
+.wrapper .tabs .tab .tab-label {
+  position: relative;
+  line-height: 2.75em;
+  height: 3em;
+  padding: 0 1.618em;
+  background: #2D727D;
+  color: #fff;
+  cursor: pointer;
+  top: 0;
+  transition: all 0.25s;
+}
+.wrapper .tabs .tab .tab-label:hover {
+  top: -0.25rem;
+  transition: top 0.25s;
+}
+.wrapper .tabs .tab .tab-content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  left: 0;
+  padding: 1.618rem;
+  background: #3C98A7;
+  color: #2c3e50;
+  border-bottom: 0.25rem solid #bdc3c7;
+  opacity: 0;
+  transition: all 0.35s;
+}
+.wrapper .tabs .tab .tab-content label {
+  border: 1px solid #16a085;
+  padding: 12px 15px 5px 13px;
+  width: 10%;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #2D727D;
+  font-size: 14px;
+}
+.wrapper .tabs .tab .tab-content input {
+  padding: 5px 0px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  color: #2D727D;
+  width: 5%;
+}
+.wrapper .tabs .tab .tab-content button {
+  background: #fff;
+  padding: 10px 40px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: #2D727D;
+}
+.wrapper .tabs .tab .tab-switch:checked + .tab-label {
+  background: #fff;
+  color: #2c3e50;
+  border-bottom: 0;
+  border-right: 0.125rem solid #fff;
+  transition: all 0.35s;
+  z-index: 1;
+  top: -0.0625rem;
+}
+.wrapper .tabs .tab .tab-switch:checked + label + .tab-content {
+  z-index: 2;
+  opacity: 1;
+  transition: all 0.35s;
+}/*# sourceMappingURL=style.css.map */

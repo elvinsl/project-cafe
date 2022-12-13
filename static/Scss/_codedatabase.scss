@@ -1,0 +1,90 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.codedatabase{
+    border: 2px solid #2D727D;
+    text-align: center;
+    width: 50%;
+    margin: 20px auto 0 auto; 
+    box-shadow: 0px 0px 10px 5px #2D727D;
+    overflow: hidden;
+    .scroll {
+        margin:4px, 4px;
+        padding:4px;
+        background-color: #fff;
+        width: 100%;
+        height: 620px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        text-align:justify;
+        justify-content: space-around;
+        text-align: center;
+    }
+    ul{
+        background-color: #2D727D;
+        li{
+            color: #fff;
+            background-color: #3C98A7;
+            font-weight: bold;
+            font-size: 18px;
+            span{
+                color:#2D727D;
+                background-color: #fff;
+                font-weight: bold;
+                font-size: 16px;
+            }
+        }
+        .total{
+            color: #2D727D;
+            background-color: #fff;
+        }
+    }
+    h4{
+        text-decoration: underline;
+        margin-bottom: 10px;
+        color: #2D727D;
+        font-weight: bold;
+    }
+    
+    .sp1{
+        border: 1px solid #2D727D;
+        padding: 10px 20px;
+        margin: 10px auto 10px auto;
+        border-radius: 10px;
+        background-color: white;
+        color: #2D727D;
+        display: flex;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+}
+
+
+.header{
+    background-color: #3C98A7;
+    padding: 10px;
+    a{
+        background-color: #3C98A7;
+        color: #fff;
+        font-size: 18px;
+        margin-right: 10px;
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 10px 15px;
+        border-radius: 10px;
+        transition: .5s;
+        &:hover{
+            background-color: #fff;
+            color: #3C98A7;
+            border: 1px solid #3C98A7;
+        }
+    }
+}
