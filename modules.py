@@ -74,7 +74,3 @@ def get_check(check_name):
                 continue
 
     df = pd.DataFrame({'Ad': check.keys(), 'Miqdar': check.values()})
-    print(df)
-
-
-get_check('2B2FA40')
