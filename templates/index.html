@@ -5,22 +5,61 @@
 {% endblock %}
 
 {% block body %}
-    <form action="" method="post">
-        <label for="pive">Pive</label>
-        <input type="number" name="pive" id="pive" value="0"><br>
-        <label for="pendir">Pendir</label>
-        <input type="number" name="pendir" id="pendir" value="0"><br>
-        <label for="cay">Cay</label>
-        <input type="number" name="cay" id="cay" value="0"><br>
-        <input type="submit" value="OK">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-          {% endwith %}
-    </form>
+  <div class="wrapper">
+    <div class="tabs">
+        {% for i in range(1, 31)%}
+        <div class="tab">
+        {% if i == 1 %}
+            <input type="radio" name="css-tabs" id="tab-{{ i }}" checked class="tab-switch">
+        {% else %}
+            <input type="radio" name="css-tabs" id="tab-{{ i }}" class="tab-switch">
+        {% endif %}
+        <label for="tab-{{ i }}" class="tab-label">{{ i }}</label>
+        <div class="tab-content">
+            <h1>Masa {{ i }}</h1>
+            <form method="post" id="masa{{ i }}">
+                <!-- <label for="cay{{ i }}">Masa {{ i }}</label>
+                <input type="text" name="cay{{ i }}" id="cay{{ i }}">
+                <button type="submit">submit</button> -->
+                <label for="pive{{ i }}">Pive - 1.5₼</label>
+                <input type="number" name="pive{{ i }}" id="pive{{ i }}" value="0" min="0"><br>
+                <label for="pendir{{ i }}">Pendir - 1₼</label>
+                <input type="number" name="pendir{{ i }}" id="pendir{{ i }}" value="0" min="0"><br>
+                <label for="cay{{ i }}">Cay - 2₼</label>
+                <input type="number" name="cay{{ i }}" id="cay{{ i }}" value="0" min="0"><br>
+                <input type="hidden" name="{{ i }}" id="{{ i }}" value="{{ i }}"><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+  </script>
+
+  {% for i in range(1, 31) %}
+    <script type="text/javascript">
+        $(document).on('submit','#masa{{ i }}',function(e)
+                    {
+        console.log('Masa - {{ i }}');
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url:'/',
+            data: {
+                pive:$("#pive{{ i }}").val(),
+                pendir:$("#pendir{{ i }}").val(),
+                cay:$("#cay{{ i }}").val(),
+                masa:$("#{{ i }}").val(),
+            },
+            success:function() {
+                alert('Masa {{ i }} Qeyd Edildi!');
+            }
+        })
+        });
+    </script>
+  {% endfor %}
 {% endblock %}
