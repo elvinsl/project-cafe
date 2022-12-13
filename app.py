@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, flash
 import json
-from modules import add_db
+from modules import add_db, prices
 
 
 app = Flask(__name__)
@@ -25,7 +25,7 @@ def index():
 def database():
     with open('db.json', 'r') as f:
         data = json.load(f)
-    return render_template('database.html', data=data)
+    return render_template('database.html', data=data, prices=prices)
 
 
 if __name__ == '__main__':
