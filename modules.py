@@ -29,7 +29,7 @@ def add_db(data):
     new_data = {check_name: data}
     new_data[check_name]['total'] = price
     new_data[check_name]['masa'] = masa_number
-    with open('db.json', 'r') as f:
+    with open('database\\db.json', 'r') as f:
         try:
             json_data = json.load(f)
         except:
@@ -42,7 +42,7 @@ def add_db(data):
         json_data = new_json_data
         # json_data.update({time_date: [new_data]})
     finally:
-        with open('db.json', 'w') as f:
+        with open('database\\db.json', 'w') as f:
             json.dump(json_data, f)
 
 

@@ -23,9 +23,13 @@ def index():
 
 @app.route('/database')
 def database():
-    with open('db.json', 'r') as f:
-        data = json.load(f)
-    return render_template('database.html', data=data, prices=prices)
+    try:
+        with open('database\\db.json', 'r') as f:
+            data = json.load(f)
+        data = {k: v[:300] for k, v in data.items()}
+        return render_template('database.html', data=data, prices=prices)
+    except:
+        return render_template('error.html')
 
 
 if __name__ == '__main__':
